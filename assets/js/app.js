@@ -5,7 +5,8 @@
 const login = document.querySelector(".login-link")
 const register = document.querySelector(".register-link")
 const forgot = document.querySelector(".forgot-link")
-console.log(login, register, forgot); // Verifica in console
+const closeButton = document.querySelector(".close")
+console.log(login, register, forgot, closeButton); // Verifica in console
 
 /* #1.1 - Salvo in delle variabili le sezioni relative a login, register ecc */
 const loginSection = document.querySelector(".login")
@@ -40,7 +41,13 @@ forgot.addEventListener("click", (e) => {
     forgotSection.style.display = "flex" // al click la mia pagina forgot diventa visibile 
 })
 
-
+/* #2.3 - Al click sulla croce ritorno alla mia pagina di login */
+closeButton.addEventListener("click", (e) => {
+    e.preventDefault(); // Rimuovo il refresh della pagina
+    /* alert("You Click on close Button") */ // Verifico tramite alert
+    loginSection.style.display = "flex" // al click la mia pagina di login diventa visibile 
+    forgotSection.style.display = "none" // al click la mia pagina forgot diventa none 
+})
 
 
 //#endregion
