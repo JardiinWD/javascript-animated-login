@@ -33,12 +33,26 @@ p {
 }
 /*#endregion */
 
-/*#region Main utilities */
-section.main {
-    width: 100%;
+/*#region Regole in comune */
+section.main,
+.form-container,
+.close {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.img-container,
+.form-container {
+    width: 50%;
+    height: 100%;
+}
+
+/*#endregion */
+
+/*#region Main utilities */
+section.main {
+    width: 100%;
     height: 100vh;
     background-color: var(--grey);
 }
@@ -56,16 +70,18 @@ section.main {
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 3px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
+/*#endregion */
 
+/*#region Image container */
 .img-container {
-    width: 50%;
-    height: 100%;
     padding: 4rem 1rem;
     background-color: var(--light-blue);
     animation: slide-down 0.5s ease;
 }
 
+/* Keyframe per effetto su immagine */
 @keyframes slide-down {
     0% {
         transform: translateY(-100%);
@@ -79,5 +95,85 @@ section.main {
     width: 100%;
     height: 100%;
 }
+/*#endregion */
+
+/*#region Form container */
+.form-container {
+    animation: slide-up 0.5s ease;
+}
+
+/* Keyframe per effetto su Form */
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+form :where(a, span) {
+    font-size: 1.2rem;
+}
+
+form a {
+    text-decoration: none;
+}
+
+form span {
+    display: block;
+}
+
+/*#endregion */
+
+/*#region Classi dinamiche da sistemare in JS */
+
+/* Su css settata su None */
+/* Verra sistemata in JS */
+.login {
+    /* display: none; */
+}
+
+.register {
+    display: none;
+}
+
+.forgot {
+    display: none;
+    position: relative; /* Per la X */
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    height: 3.0rem;
+    width: 3.0rem;
+    border: 1px solid red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close i {
+    font-size: 1.5rem;
+    color: red;
+}
+
+/*#endregion */
+
+/*#region Media Queries */
+
+/* Fino a 600px */
+@media screen and (max-width: 500px) {
+    .img-container{
+        display: none;
+    }
+    .form-container{
+        width: 100%;
+    }
+}
+
+
 
 /*#endregion */
