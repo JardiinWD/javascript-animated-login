@@ -102,6 +102,19 @@ section.main {
     animation: slide-up 0.5s ease;
 }
 
+.form-item {
+    position: relative;
+    margin: 5px 0;
+}
+
+.fa-eye,
+.fa-eye-slash {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
 /* Keyframe per effetto su Form */
 @keyframes slide-up {
     0% {
@@ -173,7 +186,5 @@ form span {
         width: 100%;
     }
 }
-
-
 
 /*#endregion */

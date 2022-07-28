@@ -13,6 +13,13 @@ const loginSection = document.querySelector(".login")
 const registerSection = document.querySelector(".register")
 const forgotSection = document.querySelector(".forgot")
 console.log(loginSection, registerSection, forgotSection); // Verifica in console
+
+/* #3 - toggle della visibilità per le password (lato login) */
+const loginPassword = document.querySelector("#login-password") // Tramite query selector vado a trovare il mio input id password (lato login)
+const loginEyeIcon = document.querySelector("#login-eye") // Ora pesco l'id della mia icona (lato login)
+const registerPassword = document.querySelector("#register-password") // Tramite query selector vado a trovare il mio input id password (lato login)
+const registerEyeIcon = document.querySelector("#register-eye") // Ora pesco l'id della mia icona (lato login)
+console.log(loginPassword, loginEyeIcon, registerPassword, registerEyeIcon);
 //#endregion
 
 //#region Eventi js
@@ -48,6 +55,49 @@ closeButton.addEventListener("click", (e) => {
     loginSection.style.display = "flex" // al click la mia pagina di login diventa visibile 
     forgotSection.style.display = "none" // al click la mia pagina forgot diventa none 
 })
+//#endregion
 
+//#region Toggle visibility
+
+/* #3.1 - Aggiungo evento alla mia icona lato login  */
+loginEyeIcon.addEventListener("click", () => {
+    /* console.log("Stai cliccando sull'icona!"); */
+    /* Condizione per la visualizzazione della password */
+    if (loginEyeIcon.classList.contains("fa-eye")) {
+        /* Se il mio input contenesse l'icona dell'occhiolino */
+        loginPassword.setAttribute("type", "text") // Il mio input cambia da type password a type text
+        /* eyeIcon.classList.remove("fa-eye") */ // Rimuovo la mia icona fa-eye
+        /* eyeIcon.classList.add("fa-eye-slash") */ // Per aggiungerle l'icona con occhio sbarrato che servirà a nasconderla
+        /* Per utilizzare metodo più aggiornato utilizzo il replace */
+        loginEyeIcon.classList.replace("fa-eye", "fa-eye-slash") // Fa le stesse cose viste sopra ma con meno codice
+    } else if (loginEyeIcon.classList.contains("fa-eye-slash")) {
+        /* Se appunto contenesse l'icona con occhio sbarrato */
+        loginPassword.setAttribute("type", "password") // la password torna invisibile
+        /* eyeIcon.classList.remove("fa-eye-slash") */ // Gli rimuovo l'icona con occhio sbarrato
+        /* eyeIcon.classList.add("fa-eye") */ // E gli riaggiungo nuovamente l'icona iniziale
+        loginEyeIcon.classList.replace("fa-eye-slash", "fa-eye") // Fa le stesse cose viste sopra ma con meno codice
+    }
+})
+
+/* #3.2 - Aggiungo evento alla mia icona lato login  */
+registerEyeIcon.addEventListener("click", () => {
+    /* console.log("Stai cliccando sull'icona!"); */
+    /* Condizione per la visualizzazione della password */
+    if (registerEyeIcon.classList.contains("fa-eye")) {
+        /* Se il mio input contenesse l'icona dell'occhiolino */
+        registerPassword.setAttribute("type", "text") // Il mio input cambia da type password a type text
+        /* eyeIcon.classList.remove("fa-eye") */ // Rimuovo la mia icona fa-eye
+        /* eyeIcon.classList.add("fa-eye-slash") */ // Per aggiungerle l'icona con occhio sbarrato che servirà a nasconderla
+        /* Per utilizzare metodo più aggiornato utilizzo il replace */
+        registerEyeIcon.classList.replace("fa-eye", "fa-eye-slash") // Fa le stesse cose viste sopra ma con meno codice
+    }
+    else if (registerEyeIcon.classList.contains("fa-eye-slash")) {
+        /* Se appunto contenesse l'icona con occhio sbarrato */
+        registerPassword.setAttribute("type", "password") // la password torna invisibile
+        /* eyeIcon.classList.remove("fa-eye-slash") */ // Gli rimuovo l'icona con occhio sbarrato
+        /* eyeIcon.classList.add("fa-eye") */ // E gli riaggiungo nuovamente l'icona iniziale
+        registerEyeIcon.classList.replace("fa-eye-slash", "fa-eye") // Fa le stesse cose viste sopra ma con meno codice
+    }
+})
 
 //#endregion

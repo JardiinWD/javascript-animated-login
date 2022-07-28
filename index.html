@@ -37,9 +37,14 @@
                         <!-- Username -->
                         <input type="text" class="form-control form-control-lg mb-3" placeholder="Username">
                         <!-- Password -->
-                        <input type="password" class="form-control form-control-lg mb-3" placeholder="Password">
+                        <div class="form-item">
+                            <!-- Password -->
+                            <input type="password" id="login-password" class="form-control form-control-lg mb-3" placeholder="Password">
+                            <!-- Visibility -->
+                            <i class="fa-solid fa-eye" id="login-eye"></i>
+                        </div>
                         <!-- /.d-grid -->
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <!-- /.btn btn-primary btn-lg -->
                             <button class="btn btn-primary btn-lg">Login</button>
                         </div>
@@ -66,9 +71,14 @@
                         <!-- Email -->
                         <input type="email" class="form-control form-control-lg mb-3" placeholder="Email">
                         <!-- Password (Metti anche toggle per visualizzare password)-->
-                        <input type="password" class="form-control form-control-lg mb-3" placeholder="Password">
+                        <div class="form-item">
+                            <!-- Password -->
+                            <input type="password" id="register-password" class="form-control form-control-lg mb-3" placeholder="Password">
+                            <!-- Visibility -->
+                            <i class="fa-solid fa-eye" id="register-eye"></i>
+                        </div>
                         <!-- /.d-grid -->
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <!-- /.btn btn-primary btn-lg -->
                             <button class="btn btn-primary btn-lg">Register</button>
                         </div>
@@ -95,7 +105,7 @@
                         <!-- Password (Metti anche toggle per visualizzare password)-->
                         <input type="password" class="form-control form-control-lg mb-3" placeholder="Password">
                         <!-- /.d-grid -->
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <!-- /.btn btn-primary btn-lg -->
                             <button class="btn btn-primary btn-lg">Reset Password</button>
                         </div>
@@ -113,6 +123,7 @@
                     <img src="./assets/img/forgot.svg" alt="forgot Image">
                 </div>
             </div>
+            
         </div>
     </section>
 
